@@ -73,11 +73,8 @@ Status signals:
 # 3. FIFO implementation: Circular Buffer
 
 Dynamic memory allocation doesn't exist in FPGA hardware.
-
 Instead use a **fixed-size circular buffer**.
-
 Structure:
-
 * `wraddr` → next write location
 * `rdaddr` → next read location
 
