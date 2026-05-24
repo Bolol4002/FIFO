@@ -38,7 +38,7 @@ module fifo #(
             end
             if (rd && !empty) begin
                 o_data <= mem[rptr];
-                rptr <= rptr + 1;
+                rptr <= (rptr == DEPTH-1) ? 0 : rptr + 1;
                 count <= count - 1;
             end
         end
