@@ -35,12 +35,10 @@ module fifo #(
             if (wr && !full) begin
                 mem[wptr] <= data;
                 wptr <= (wptr == DEPTH-1) ? 0 : wptr + 1;
-                count <= count + 1;
             end
             if (rd && !empty) begin
                 o_data <= mem[rptr];
                 rptr <= (rptr == DEPTH-1) ? 0 : rptr + 1;
-                count <= count - 1;
             end
             // update occupancy
             case ({wr && !full, rd && !empty})
