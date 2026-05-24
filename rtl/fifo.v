@@ -29,6 +29,7 @@ module fifo #(
             wptr <= 0;
             rptr <= 0;
             count <= 0;
+            o_data <= 0;
         end
         else begin
             if (wr && !full) begin
@@ -41,6 +42,12 @@ module fifo #(
                 rptr <= (rptr == DEPTH-1) ? 0 : rptr + 1;
                 count <= count - 1;
             end
+            // update occupancy
+            case ({wr && !full, rd && !empty})
+                2'b10: count <= count + 1;
+                2'b01: count <= count - 1;
+                default: count <= count;
+            endcase
         end
     end
 
