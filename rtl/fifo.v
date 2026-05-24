@@ -3,6 +3,7 @@ module fifo #(
     parameter DEPTH = 16
 )(
     input  wire clk,
+    input wire rst,
     input  wire wr,
     input  wire rd,
     input  wire [WIDTH-1:0] data,
