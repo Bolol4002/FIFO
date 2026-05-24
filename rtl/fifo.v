@@ -25,6 +25,9 @@ module fifo #(
 
     always @(posedge clk or posedge rst) begin
     end
+
+    // combinatinal part for indicating wether they are full or empty
+    // this should not wati for next clock cycle, it should be updated immediately
     assign full = (count == DEPTH);
     assign empty = (count ==0);
 endmodule
