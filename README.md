@@ -70,3 +70,13 @@ Status signals:
 
 ---
 
+# 3. Block diagram
+
+![Block diagram](img/block.png)
+
+- when i_wr is high we write i_data to fifo.
+- when i_rd is high we return o_data from fifo
+- On any i_wr && !o_full, we’ll write i_data to memory
+˝ On any i_rd && !o_empty, we’ll read and return o_data from memory
+- On any w_wr, we’ll write i_data to our internal memory
+- On any w_rd, we’ll read and return o_rdata from memory
