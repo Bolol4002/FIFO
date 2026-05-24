@@ -33,7 +33,7 @@ module fifo #(
         else begin
             if (wr && !full) begin
                 mem[wptr] <= data;
-                wptr <= wptr + 1;
+                wptr <= (wptr == DEPTH-1) ? 0 : wptr + 1;
                 count <= count + 1;
             end
             if (rd && !empty) begin
