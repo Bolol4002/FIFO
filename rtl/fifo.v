@@ -22,7 +22,7 @@ module fifo #(
     localparam ptr_width = $clog2(DEPTH);
     reg [ptr_width-1:0] wptr;
     reg [ptr_width-1:0] rptr;
-    reg [ptr_width-1:0] count;  
+    reg [ptr_width:0] count;  
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
