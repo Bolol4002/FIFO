@@ -1,18 +1,4 @@
-`timescale 1ns/1ps
-module fifo_tb;
-parameter WIDTH = 8;
-parameter DEPTH = 16;
-reg clk;
-reg rst;
-reg wr;
-reg rd;
-reg [WIDTH-1:0] data;
-wire [WIDTH-1:0] o_data;
-wire full;
-wire empty;
-fifo #(
-    .WIDTH(WIDTH),
- 
+
 `timescale 1ns/1ps
 module fifo_tb;
 parameter WIDTH = 8;
