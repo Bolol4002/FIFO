@@ -24,6 +24,15 @@ module fifo #(
     reg [ptr_width-1:0] count;  
 
     always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            wptr <= 0;
+            rptr <= 0;
+            count <= 0;
+        end
+        else begin
+            if () begin
+            end
+        end
     end
 
     // combinatinal part for indicating wether they are full or empty
