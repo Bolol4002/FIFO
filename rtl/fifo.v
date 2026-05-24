@@ -12,6 +12,7 @@ module fifo #(
 );
     reg [WIDTH-1:0] mem [0:DEPTH-1];
 
+    // New stuff
     //$clog2(N) means:
     //Ceiling of log₂(N)
     //Translation:
