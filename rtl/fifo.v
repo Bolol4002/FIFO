@@ -30,7 +30,15 @@ module fifo #(
             count <= 0;
         end
         else begin
-            if () begin
+            if (wr && !full) begin
+                mem[wptr] <= data;
+                wptr <= wptr + 1;
+                count <= count + 1;
+            end
+            if (rd && !empty) begin
+                o_data <= mem[rptr];
+                rptr <= rptr + 1;
+                count <= count - 1;
             end
         end
     end
