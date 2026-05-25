@@ -13,6 +13,7 @@ wire [WIDTH-1:0] o_data;
 wire full;
 wire empty;
 
+
 fifo #(
     .WIDTH(WIDTH),
     .DEPTH(DEPTH)
