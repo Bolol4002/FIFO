@@ -80,3 +80,6 @@ Status signals:
 ˝ On any i_rd && !o_empty, we’ll read and return o_data from memory
 - On any w_wr, we’ll write i_data to our internal memory
 - On any w_rd, we’ll read and return o_rdata from memory
+
+
+## Verificatoin using - Verilator UCDB coverage
